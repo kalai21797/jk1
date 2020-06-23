@@ -1,0 +1,84 @@
+<html>
+<center><h1>FORM VALIDATION</h1></center>
+<form onsubmit="return myFunction()">
+<table>
+<tr>
+<th>name</th>
+<td><input type="text" name="name" id="kalai1"></td>
+<span id="jaga1"></span>
+</tr>
+<tr>
+<th>email</th>
+<td><input type="text" name="email" id="kalai2"></td>
+<span id="jaga2"></span>
+</tr>
+<tr>
+<th>mobile number</th>
+<td><input type="text" name="mob no" id="kalai3"></td>
+<span id="jaga3"></span>
+</tr>
+<tr>
+<th>password</th>
+<td><input type="text" name="pass" id="kalai4"></td>
+<span id="jaga4"></span>
+</tr>
+<tr>
+<th>confirm password</th>
+<td><input type="text" name="confirm pass" id="kalai5"></td>
+<span id="jaga5"></span>
+</tr>
+<tr>
+<td><input type="submit"></td>
+</tr>
+</table>
+<script>
+function myFunction(){
+var Uname=document.getElementById("kalai1").value;
+var Uemail=document.getElementById("kalai2").value;
+var Umob=document.getElementById("kalai3").value;
+var Upass=document.getElementById("kalai4").value;
+var Ucon_pass=document.getElementById("kalai5").value;
+
+if(Uname==""){
+document.getElementById("jaga1").innerHTML="please enter the name";
+return false;
+}
+if(Uname.length<4){
+document.getElementById("jaga1").innerHTML=" ";
+document.getElementById("jaga1").innerHTML="enter atleast above 4 characters";
+return false;
+}
+if(Uemail==""){
+document.getElementById("jaga1").innerHTML=" ";
+document.getElementById("jaga2").innerHTML="please enter the email id";
+return false;
+}
+if(Uemail<2){
+document.getElementById("jaga2").innerHTML=" ";
+document.getElementById("jaga2").innerHTML="enter above 2 digits";
+return false;
+}
+if(Umob==""){
+document.getElementById("jaga2").innerHTML=" ";
+document.getElementById("jaga3").innerHTML="please enter the mobile number";
+return false;
+}
+if(Umob.length!=10){
+document.getElementById("jaga3").innerHTML=" ";
+document.getElementById("jaga3").innerHTML="mobile number must be include 10 digits";
+return false;
+}else true;
+if(Upass==""){
+document.getElementById("jaga3").innerHTML=" ";
+document.getElementById("jaga4").innerHTML="please enter the password";
+return false;
+}else true;
+if(Upass!=Ucon_pass){
+document.getElementById("jaga4").innerHTML=" ";
+document.getElementById("jaga5").innerHTML="password is not equal to confirm password";
+return false;
+}
+alert("Form validated successfully");
+}
+</script>
+</html>
